@@ -56,7 +56,6 @@ export const StockTable = ({ currentItems}) => {
 							<StyledTableCell align="center" className='name' >Nombre</StyledTableCell>
 							<StyledTableCell align="center" >Moneda</StyledTableCell>
 							<StyledTableCell align="center">Tipo</StyledTableCell>
-
 						</TableRow>
 					</StyledTableHead>
 					<TableBody>
@@ -73,11 +72,9 @@ export const StockTable = ({ currentItems}) => {
 									<StyledTableCell align="center">{items.type}</StyledTableCell>
 								</StyledTableRow>
 							))}
-
 					</TableBody>
 				</Table>
-			</TableContainer>
-			)
+			</TableContainer>			
 		</div>
 	)
 }
