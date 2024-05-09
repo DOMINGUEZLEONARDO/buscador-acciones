@@ -11,6 +11,7 @@ export const useDetails = () => {
   const [mode, setMode] = useState("realTime");
   const [startDateIndex, setStartDateIndex] = useState("");
   const [endDateIndex, setEndDateIndex] = useState("");
+  const [errorData, setErrorData] = useState(false)
 
   useEffect(() => {
     if (mode === "realTime") {
@@ -29,12 +30,13 @@ export const useDetails = () => {
           }
         } catch (error) {
           console.log("Error al obtener datos de Api:", error);
+          setErrorData(true)
         }
       };
 
       fetchData();
     }
-  }, [symbol, interval, mode]);
+  }, [symbol, interval, mode,]);
 
   const handleHistoryInterval = (event) => {
     setHistoryInterval(event.target.value);
@@ -71,6 +73,7 @@ export const useDetails = () => {
         }
       } catch (error) {
         console.log("Error al obtener datos de Api:", error);
+        console.log('first')
       }
     }
   };
@@ -93,5 +96,6 @@ export const useDetails = () => {
     handleCheckBox,
     click,
     setInterval,
+    errorData
   };
 };
